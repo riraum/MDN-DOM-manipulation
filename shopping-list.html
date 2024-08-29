@@ -23,7 +23,7 @@
     <div>
       <label for="item">Enter a new item:</label>
       <input type="text" name="item" id="item">
-      <button>Add item</button>
+      <button id="btn">Add item</button>
     </div>
 
     <ul>
@@ -31,9 +31,33 @@
     </ul>
 
     <script>
-      const ul = document.querySelector("#ul");
-      const input = document.querySelector("#item");
-      const button = document.querySelector("button");
+      // Variables
+      const ulSelect = document.querySelectorAll("ul");
+      const inputSelect = document.querySelectorAll("input");
+      const buttonSelect = document.querySelectorAll("button");
+      // Button click
+      const btn = document.querySelector("#btn");
+      function onClickFunction() {
+        const inputValue = document.getElementById("item").value;
+        // DEBUG
+        console.log(inputValue);
+      };
+      btn.addEventListener("click", onClickFunction);
+      // Empty input element
+      inputValue = '';
+      // Create new elements
+      const liItem = document.createElement("li");
+      const spanItem = document.createElement("span");
+      const buttonItem = document.createElement("button");
+      // // Add children 
+      liItem.appendChild(spanItem);
+      liItem.appendChild(buttonItem);
+      // // Add text
+      spanItem.textContent = inputValue;
+      buttonItem.textContent = "Delete";
+      //  Add li
+      const liSelect = document.querySelector(liItem);
+      liSelect.appendChild(liItem);
     </script>
   </body>
 </html>
