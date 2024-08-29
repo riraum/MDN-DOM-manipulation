@@ -33,6 +33,8 @@
     <script>
       // Variables
       const ulSelect = document.querySelectorAll("ul");
+      // Debug
+      console.log(ulSelect);
       const inputSelect = document.querySelectorAll("input");
       const buttonSelect = document.querySelectorAll("button");
       // Button click
@@ -56,8 +58,8 @@
       spanItem.textContent = inputValue;
       buttonItem.textContent = "Delete";
       //  Add li
-      const liSelect = document.querySelector(liItem);
-      liSelect.appendChild(liItem);
+      const ulSingleSelect = document.querySelector("ul");
+      ulSingleSelect.appendChild(liItem);
     </script>
   </body>
 </html>
