@@ -42,7 +42,7 @@
       function onClickFunction() {
         const inputValue = document.getElementById("item").value;
         // DEBUG
-        console.log(inputValue);
+        // console.log(inputValue);
       };
       btn.addEventListener("click", onClickFunction);
       // Empty input element
@@ -56,10 +56,21 @@
       liItem.appendChild(buttonItem);
       // // Add text
       spanItem.textContent = inputValue;
+      // DEBUG
+      // console.log(inputValue);
       buttonItem.textContent = "Delete";
-      //  Add li
+      //  Add li using selector
       const ulSingleSelect = document.querySelector("ul");
       ulSingleSelect.appendChild(liItem);
+      // DEBUG
+      console.log(ulSingleSelect);
+      // Add li using SelectorAll
+      // ulSelect.appendChild(liItem);
+      // Add delete function
+      const btnDelete = document.querySelectorAll("button");
+      function onClickFunctionDelete() {
+        ulSingleSelect.removeChild(liItem);
+      }
     </script>
   </body>
 </html>
