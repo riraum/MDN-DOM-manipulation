@@ -32,45 +32,50 @@
 
     <script>
       // Variables
-      const ulSelect = document.querySelectorAll("ul");
+      const ulSelect = document.querySelector("ul");
       // Debug
       console.log(ulSelect);
-      const inputSelect = document.querySelectorAll("input");
-      const buttonSelect = document.querySelectorAll("button");
+      const inputSelect = document.querySelector("input");
+      const buttonSelect = document.querySelector("button");
       // Button click
-      const btn = document.querySelector("#btn");
-      function onClickFunction() {
-        const inputValue = document.getElementById("item").value;
+      // const btn = document.querySelector("#btn");
+      // function onClickFunction() {
+      //   const inputValue = document.getElementById("item").value;
         // DEBUG
         // console.log(inputValue);
-      };
-      btn.addEventListener("click", onClickFunction);
-      // Empty input element
-      inputValue = '';
-      // Create new elements
-      const liItem = document.createElement("li");
-      const spanItem = document.createElement("span");
-      const buttonItem = document.createElement("button");
-      // // Add children 
-      liItem.appendChild(spanItem);
-      liItem.appendChild(buttonItem);
-      // // Add text
-      spanItem.textContent = inputValue;
-      // DEBUG
-      // console.log(inputValue);
-      buttonItem.textContent = "Delete";
-      //  Add li using selector
-      const ulSingleSelect = document.querySelector("ul");
-      ulSingleSelect.appendChild(liItem);
-      // DEBUG
-      console.log(ulSingleSelect);
-      // Add li using SelectorAll
-      // ulSelect.appendChild(liItem);
-      // Add delete function
-      const btnDelete = document.querySelectorAll("button");
-      function onClickFunctionDelete() {
-        ulSingleSelect.removeChild(liItem);
-      }
+      buttonSelect.addEventListener("click", () => {
+        const myItem = inputSelect.value;
+        // Empty input element
+        inputValue = '';
+        // Create new elements
+        const liItem = document.createElement("li");
+        const spanItem = document.createElement("span");
+        const buttonItem = document.createElement("button");
+        // // Add children 
+        liItem.appendChild(spanItem);
+        liItem.appendChild(buttonItem);
+        // // Add text
+        spanItem.textContent = myItem;
+        // DEBUG
+        // console.log(inputValue);
+        buttonItem.textContent = "Delete";
+        //  Add li using selector
+        // const ulSingleSelect = document.querySelector("ul");
+        ulSelect.appendChild(liItem);
+        // DEBUG
+        // console.log(ulSingleSelect);
+        // Add li using SelectorAll
+        // ulSelect.appendChild(liItem);
+        // Add delete function
+        // const btnDelete = document.querySelectorAll("button");
+        // function onClickFunctionDelete() {
+        //   ulSelect.removeChild(liItem);
+        
+        buttonItem.addEventListener("click", () => {
+          ulSelect.removeChild(liItem);
+        });
+        inputSelect.focus();
+      });
     </script>
   </body>
 </html>
